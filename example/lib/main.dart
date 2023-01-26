@@ -92,41 +92,43 @@ class _PlutoGridExamplePageState extends State<PlutoGridExamplePage> {
     ),
   ];
 
-  final List<PlutoRow> rows = [
-    PlutoRow(
-      cells: {
-        'id': PlutoCell(value: 'user1'),
-        'name': PlutoCell(value: 'Mike'),
-        'age': PlutoCell(value: 20),
-        'role': PlutoCell(value: 'Programmer'),
-        'joined': PlutoCell(value: '2021-01-01'),
-        'working_time': PlutoCell(value: '09:00'),
-        'salary': PlutoCell(value: 300),
-      },
-    ),
-    PlutoRow(
-      cells: {
-        'id': PlutoCell(value: 'user2'),
-        'name': PlutoCell(value: 'Jack'),
-        'age': PlutoCell(value: 25),
-        'role': PlutoCell(value: 'Designer'),
-        'joined': PlutoCell(value: '2021-02-01'),
-        'working_time': PlutoCell(value: '10:00'),
-        'salary': PlutoCell(value: 400),
-      },
-    ),
-    PlutoRow(
-      cells: {
-        'id': PlutoCell(value: 'user3'),
-        'name': PlutoCell(value: 'Suzi'),
-        'age': PlutoCell(value: 40),
-        'role': PlutoCell(value: 'Owner'),
-        'joined': PlutoCell(value: '2021-03-01'),
-        'working_time': PlutoCell(value: '11:00'),
-        'salary': PlutoCell(value: 700),
-      },
-    ),
-  ];
+  final List<PlutoRow> rows = List.generate(100, (index) {
+    return [
+      PlutoRow(
+        cells: {
+          'id': PlutoCell(value: 'user1-$index'),
+          'name': PlutoCell(value: 'Mike-$index'),
+          'age': PlutoCell(value: 20),
+          'role': PlutoCell(value: 'Programmer-$index'),
+          'joined': PlutoCell(value: '2021-01-01'),
+          'working_time': PlutoCell(value: '09:00'),
+          'salary': PlutoCell(value: 300),
+        },
+      ),
+      PlutoRow(
+        cells: {
+          'id': PlutoCell(value: 'user2-$index'),
+          'name': PlutoCell(value: 'Jack-$index'),
+          'age': PlutoCell(value: 25),
+          'role': PlutoCell(value: 'Designer-$index'),
+          'joined': PlutoCell(value: '2021-02-01'),
+          'working_time': PlutoCell(value: '10:00'),
+          'salary': PlutoCell(value: 400),
+        },
+      ),
+      PlutoRow(
+        cells: {
+          'id': PlutoCell(value: 'user3-$index'),
+          'name': PlutoCell(value: 'Suzi-$index'),
+          'age': PlutoCell(value: 40),
+          'role': PlutoCell(value: 'Owner-$index'),
+          'joined': PlutoCell(value: '2021-03-01'),
+          'working_time': PlutoCell(value: '11:00'),
+          'salary': PlutoCell(value: 700),
+        },
+      ),
+    ];
+  }).expand((element) => element).toList();
 
   /// columnGroups that can group columns can be omitted.
   final List<PlutoColumnGroup> columnGroups = [
