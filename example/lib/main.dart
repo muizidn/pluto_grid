@@ -139,7 +139,6 @@ class _PlutoGridTableViewPageState extends State<PlutoGridTableViewPage> {
         },
         onRowSecondaryTap: (event) {
           setState(() {
-            //rows.add(createRow(rows.length));
             stateManager.appendRows([createRow(rows.length)]);
             scrollToBottomIfLastRowVisible();
           });

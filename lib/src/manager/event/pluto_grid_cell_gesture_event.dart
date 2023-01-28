@@ -60,6 +60,10 @@ class PlutoGridCellGestureEvent extends PlutoGridEvent {
     }
 
     _onLongPressStart(stateManager);
+    _invokeOnSelected(stateManager);
+  }
+
+  void _invokeOnSelected(PlutoGridStateManager stateManager) {
     stateManager.onSelected!(
       PlutoGridOnSelectedEvent(
         row: stateManager.currentRow,
@@ -103,6 +107,8 @@ class PlutoGridCellGestureEvent extends PlutoGridEvent {
     if (stateManager.mode.isMultiSelectMode) {
       stateManager.handleOnSelected();
     }
+
+    _invokeOnSelected(stateManager);
   }
 
   void _onDoubleTap(PlutoGridStateManager stateManager) {
