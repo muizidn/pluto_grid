@@ -58,8 +58,16 @@ class PlutoGridCellGestureEvent extends PlutoGridEvent {
     } else {
       stateManager.setCurrentCell(cell, rowIdx);
     }
-    
+
     _onLongPressStart(stateManager);
+    stateManager.onSelected!(
+      PlutoGridOnSelectedEvent(
+        row: stateManager.currentRow,
+        rowIdx: stateManager.currentRowIdx,
+        cell: stateManager.currentCell,
+        selectedRows: stateManager.currentSelectingRows,
+      ),
+    );
   }
 
   void _onLongPressStart(PlutoGridStateManager stateManager) {
