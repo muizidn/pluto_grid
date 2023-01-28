@@ -135,7 +135,7 @@ class _PlutoGridTableViewPageState extends State<PlutoGridTableViewPage> {
           print(event);
         },
         onSelected: (event) {
-          print("SELECT");
+          print("SELECT ${event.selectedRows?.map((e) => stateManager.rows.indexOf(e))}");
         },
         onRowSecondaryTap: (event) {
           setState(() {
